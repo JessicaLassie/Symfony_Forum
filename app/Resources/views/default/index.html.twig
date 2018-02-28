@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Liste des thèmes</h1>
+
+    <h2>{{ message }}</h2>
+
+    <table class="table">
+        <tbody>
+        {% for theme in themeList %}
+            <tr>
+                <td>
+                    <a href="{{ path('theme_details', {'id': theme.id}) }}">
+                        {{ theme.name }}
+                    </a>
+                </td>
+                <td>{{ theme.posts | length }} posts</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
+
+{% block aside %}
+    <h3>Les derniers articles</h3>
+    <ul class="list-group">
+        {%  for post in lastPosts %}
+            <li class="list-group-item">
+                <a href="{{ path('post_details', {slug:post.slug}) }}">{{ post.title }}</a>
+            </li>
+        {%  endfor %}
+    </ul>
+    <h3>Les auteurs</h3>
+    <ul class="list-group">
+        {%  for author in authorSummary %}
+            <li class="list-group-item">
+                <a href="{{ path('post_par_auteur', {id:author.id}) }}">{{ author.firstName }} {{ author.name | upper }} ({{ author.numberOfPosts }})</a>
+            </li>
+        {%  endfor %}
+    </ul>
+    <h3>Historique</h3>
+    <ul class="list-group">
+        {%  for item in yearSummary %}
+            <li class="list-group-item">
+                <a href="{{ path('post_par_annee', {year:item.yearPublished}) }}">{{ item.yearPublished }} ({{ item.numberOfPosts }})</a>
+            </li>
+        {%  endfor %}
+    </ul>
+{% endblock %}
+
+

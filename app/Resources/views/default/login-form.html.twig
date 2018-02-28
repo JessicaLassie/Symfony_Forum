@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="col-md-5">
+        <h2>Se connecter</h2>
+        {%  if error %}
+            <div class="alert alert-danger">
+                {{ error.message | trans }}
+            </div>
+        {% endif %}
+        <form method="post" action="{{ action }}">
+            <div class="form-group">
+                <label>Login</label>
+                <input type="text" class="form-control" placeholder="Tapez votre login" name="_username" value="{{ userName }}">
+            </div>
+            <div class="form-group">
+                <label>Mot de passe</label>
+                <input type="password" class="form-control" placeholder="Tapez votre mot de passe" name="_password">
+            </div>
+            <button type="submit" class="btn btn-primary">Valider</button>
+        </form>
+    </div>
+
+{% endblock %}
+
+{% block aside %}
+
+{% endblock %}
+

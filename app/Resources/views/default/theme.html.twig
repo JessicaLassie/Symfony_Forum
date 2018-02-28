@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <ol class="breadcrumb">
+        <li>
+            <a href="{{ path('homepage') }}">Liste des thèmes</a>
+        </li>
+    </ol>
+
+
+    {% if theme is defined %}
+        <h1>{{ theme.name }}</h1>
+    {% elseif title is defined %}
+        <h1>{{ title }}</h1>
+    {% endif %}
+
+    <table class="table">
+        <tbody>
+        {% for post in postList %}
+            <tr>
+                <td>
+                    <a href="{{ path('post_details', {'slug': post.slug}) }}">
+                        {{ post.title }}
+                    </a>
+                </td>
+                <td>{{ post.answers | length }} réponses</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% if is_granted('ROLE_AUTHOR') %}
+        <h2>Nouveau post</h2>
+        {{ form(newPostForm) }}
+    {% endif %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.ckeditor.com/4.8.0/full/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('appbundle_post_text');
+    </script>
+{% endblock %}
+

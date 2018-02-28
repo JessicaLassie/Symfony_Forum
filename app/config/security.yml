@@ -1,0 +1,74 @@
+# To get started with security, check out the documentation:
+# https://symfony.com/doc/current/security.html
+security:
+
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    providers:
+        admin_provider:
+            memory:
+              users:
+                god: {password: 777, roles: ['ROLE_ROOT']}
+                admin: {password: 123, roles: ['ROLE_ADMIN']}
+        author_provider:
+            entity:
+              class: AppBundle:Author
+              property: email
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+        AppBundle\Entity\Author:
+            algorithm: bcrypt
+
+    role_hierarchy:
+        ROLE_ROOT: ['ROLE_ADMIN', 'ROLE_ALLOWED_TO_SWITCH']
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        login-admin:
+            # les routes commencant par /admin-login
+            pattern: ^/admin-login$
+            # acceptent les utilisateurs anonymes
+            anonymous: true
+
+        admin:
+            # les routes commencant par /admin
+            pattern: ^/admin
+            # n'acceptent pas les utilisateurs anonymes
+            anonymous: false
+            provider: admin_provider
+            form_login:
+                # route d'affichage du formulaire
+                login_path: admin_login_route
+                # route de traitement du formulaire
+                check_path: admin_check_route
+                # route d'arrivée après traitement
+                default_target_path: /admin
+            logout:
+                path: admin_logout
+                target: homepage
+
+        main:
+            # les routes commencant par /
+            pattern: ^/
+            # acceptent les utilisateurs anonymes
+            anonymous: true
+            provider: author_provider
+            form_login:
+                # route d'affichage du formulaire
+                login_path: author_login_route
+                # route de traitement du formulaire
+                check_path: author_check_route
+            logout:
+                path: author_logout
+                target: homepage
+            # activate different ways to authenticate
+
+            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
+            #http_basic: ~
+
+            # https://symfony.com/doc/current/security/form_login_setup.html
+            #form_login: ~
