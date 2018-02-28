@@ -178,9 +178,9 @@ class DefaultController extends Controller
         //Traitement des données postées si le formulaire est correct
         if ($form->isSubmitted() && $form->isValid()) {
 
-            //Encryptage du mot de passe récupéré
-            $password = password_hash($author->getPlainPassword(), PASSWORD_BCRYPT);
-            $author->setPassword($password);
+            //Encryptage du mot de passe récupéré (inutile car géré par PasswordListener)
+            //$password = password_hash($author->getPlainPassword(), PASSWORD_BCRYPT);
+            //$author->setPassword($password);
 
             //Sauvegarde de l'entité
             $em = $this->getDoctrine()->getManager();

@@ -183,3 +183,11 @@ eae518,127.0.0.1,GET,http://localhost:8000/,1519825920,,200
 72ee91,127.0.0.1,GET,http://localhost:8000/,1519828443,,200
 6e7f31,127.0.0.1,GET,http://localhost:8000/,1519828695,,200
 bc2b9f,127.0.0.1,GET,http://localhost:8000/,1519828865,,200
+3bd0ad,127.0.0.1,GET,http://localhost:8000/,1519830327,,200
+c55f0a,127.0.0.1,GET,http://localhost:8000/ff,1519830333,71034b,200
+71034b,127.0.0.1,GET,http://localhost:8000/ff,1519830333,,404
+a5f2b1,127.0.0.1,GET,http://localhost:8000/,1519830339,,200
+64d884,127.0.0.1,GET,http://localhost:8000/,1519832546,,200
+220968,127.0.0.1,GET,http://localhost:8000/inscription-auteur,1519832556,,200
+bd668e,127.0.0.1,POST,http://localhost:8000/inscription-auteur,1519832595,,302
+5f13c4,127.0.0.1,GET,http://localhost:8000/,1519832595,,200

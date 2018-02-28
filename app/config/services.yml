@@ -8,11 +8,19 @@ services:
     #    class: AppBundle\Directory\ClassName
     #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
 
+    #Test de la notion de service
     app.hello:
         class: AppBundle\Services\HelloService
         arguments:
           - "@security.token_storage"
+        #tags:
+        #  - {name: kernel.event_subscriber}
+
+    doctrine.password:
+        class: AppBundle\DoctrineListener\PasswordListener
+        arguments:
+          - "@security.password_encoder"
         tags:
-          - {name: kernel.event_subscriber}
+          - {name: doctrine.event_listener, event: prePersist}
 
 
