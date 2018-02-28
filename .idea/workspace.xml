@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f0bac8d7-2b22-4f22-84f2-dc1526acb16b" name="Default" comment="Ajout upload images" />
+    <list default="true" id="f0bac8d7-2b22-4f22-84f2-dc1526acb16b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,9 +50,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="646">
               <caret line="38" column="61" lean-forward="false" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
-              <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -259,7 +259,7 @@
       <workItem from="1519718067203" duration="23323000" />
       <workItem from="1519805079425" duration="15105000" />
       <workItem from="1519828851446" duration="100000" />
-      <workItem from="1519828953583" duration="18000" />
+      <workItem from="1519828953583" duration="844000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1519720375586</created>
@@ -286,7 +286,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79330000" />
+    <option name="totallyTimeSpent" value="80156000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
@@ -320,7 +320,8 @@
     <MESSAGE value="Commit" />
     <MESSAGE value="Ajout slug" />
     <MESSAGE value="Ajout upload images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout upload images" />
+    <MESSAGE value="Test des services" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test des services" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -390,9 +391,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
           <caret line="57" column="43" lean-forward="false" selection-start-line="57" selection-start-column="43" selection-end-line="57" selection-end-column="43" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -672,9 +671,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="38" column="61" lean-forward="false" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
